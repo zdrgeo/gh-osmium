@@ -1,6 +1,6 @@
 # Osmium - GitHub CLI extension
 
-This is Osmium - GitHub CLI extension. Osmium is a prototype tool for exploring the dependencies between elements in a software system module by analyzing the evolution of the files that contain these elements.
+This is a GitHub CLI extension to integrate Osmium with GitHub CLI. Osmium is a prototype tool for exploring the dependencies between elements in a software system module by analyzing the evolution of the files that contain these elements.
 
 ## Overview
 
@@ -14,7 +14,6 @@ Configuration
 # config.env
 
 SOURCE=github:pullrequest
-GITHUB_TOKEN=
 GITHUB_REPOSITORY_OWNER=
 GITHUB_REPOSITORY_NAME=
 ```
