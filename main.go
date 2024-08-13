@@ -1,26 +1,67 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/cli/go-gh/v2/pkg/api"
+	"github.com/spf13/viper"
+	"github.com/zdrgeo-scaleforce/gh-osmium/cmd/cli/command"
+	"github.com/zdrgeo/osmium/pkg/analysis"
+	"github.com/zdrgeo/osmium/pkg/repository"
+	"github.com/zdrgeo/osmium/pkg/source/github"
+	"github.com/zdrgeo/osmium/pkg/view"
 )
 
 func main() {
-	fmt.Println("hi world, this is the gh-osmium extension!")
-	client, err := api.DefaultRESTClient()
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	response := struct {Login string}{}
-	err = client.Get("user", &response)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Printf("running as %s\n", response.Login)
-}
+	viper.AddConfigPath(".")
+	// viper.SetConfigFile(".env")
+	// viper.SetConfigName("config")
+	// viper.SetConfigType("env") // "env", "json", "yaml"
+	viper.SetEnvPrefix("osmium")
+	viper.AutomaticEnv()
 
-// For more examples of using go-gh, see:
-// https://github.com/cli/go-gh/blob/trunk/example_gh_test.go
+	if err := viper.ReadInConfig(); err != nil {
+		log.Fatal(err)
+	}
+
+	client, err := api.DefaultGraphQLClient()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	analysisSource := github.NewPullRequestAnalysisSource(client, viper.GetString("GITHUB_REPOSITORY_OWNER"), viper.GetString("GITHUB_REPOSITORY_NAME"))
+
+	analysisRepository := repository.NewFileAnalysisRepository("") // Empty means user home
+	viewRepository := repository.NewFileViewRepository("")         // Empty means user home
+
+	createAnalysisHandler := analysis.NewCreateAnalysisHandler(analysisSource, analysisRepository)
+	changeAnalysisHandler := analysis.NewChangeAnalysisHandler(analysisSource, analysisRepository)
+	deleteAnalysisHandler := analysis.NewDeleteAnalysisHandler(analysisRepository)
+
+	createViewHandler := view.NewCreateViewHandler(analysisRepository, viewRepository)
+	changeViewHandler := view.NewChangeViewHandler(analysisRepository, viewRepository)
+	deleteViewHandler := view.NewDeleteViewHandler(viewRepository)
+	renderViewHandler := view.NewRenderViewHandler(viewRepository)
+	listenViewHandler := view.NewListenViewHandler()
+
+	createAnalysisCommand := command.NewCreateAnalysisCommand(createAnalysisHandler)
+	changeAnalysisCommand := command.NewChangeAnalysisCommand(changeAnalysisHandler)
+	deleteAnalysisCommand := command.NewDeleteAnalysisCommand(deleteAnalysisHandler)
+
+	analysisCommand := command.NewAnalysisCommand(createAnalysisCommand, changeAnalysisCommand, deleteAnalysisCommand)
+
+	createViewCommand := command.NewCreateViewCommand(createViewHandler)
+	changeViewCommand := command.NewChangeViewCommand(changeViewHandler)
+	deleteViewCommand := command.NewDeleteViewCommand(deleteViewHandler)
+	renderViewCommand := command.NewRenderViewCommand(renderViewHandler)
+	listenViewCommand := command.NewListenViewCommand(listenViewHandler)
+
+	viewCommand := command.NewViewCommand(createViewCommand, changeViewCommand, deleteViewCommand, renderViewCommand, listenViewCommand)
+
+	osmiumCommand := command.NewOsmiumCommand(analysisCommand, viewCommand)
+
+	if err := osmiumCommand.Execute(); err != nil {
+		log.Fatal(err)
+	}
+}
