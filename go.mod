@@ -6,7 +6,7 @@ require (
 	github.com/cli/go-gh/v2 v2.9.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
-	github.com/zdrgeo/osmium v0.0.0-20240813175630-fa7ad1fc5ef4
+	github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea
 )
 
 require (
