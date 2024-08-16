@@ -13,9 +13,8 @@ Configuration
 ```
 # config.env
 
+BASEPATH=
 SOURCE=github:pullrequest
-GITHUB_REPOSITORY_OWNER=
-GITHUB_REPOSITORY_NAME=
 ```
 
 Commands to [install the extension](https://docs.github.com/en/github-cli/github-cli/using-github-cli-extensions#installing-extensions)
@@ -29,9 +28,9 @@ gh extension upgrade https://github.com/zdrgeo/gh-osmium
 Commands to manipulate the DSM analyses
 
 ```
-gh osmium analysis create --name="ticketing_tixets" --source="github:pullrequest"
+gh osmium analysis create --name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
 
-gh osmium analysis change --name="ticketing_tixets" --source="github:pullrequest"
+gh osmium analysis change --name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
 
 gh osmium analysis delete --name="ticketing_tixets"
 ```
