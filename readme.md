@@ -28,23 +28,27 @@ gh extension upgrade https://github.com/zdrgeo/gh-osmium
 Commands to manipulate the DSM analyses
 
 ```
-gh osmium analysis create --name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
+gh osmium analysis create --analysis-name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
 
-gh osmium analysis change --name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
+gh osmium analysis change --analysis-name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
 
-gh osmium analysis delete --name="ticketing_tixets"
+gh osmium analysis delete --analysis-name="ticketing_tixets"
 ```
 
 Commands to manipulate the views
 
 ```
-gh osmium view create --analysis-name="ticketing_tixets" --name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
+gh osmium view create --analysis-name="ticketing_tixets" --view-name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
 
-gh osmium view change --analysis-name="ticketing_tixets" --name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
+gh osmium view change --analysis-name="ticketing_tixets" --view-name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
 
-gh osmium view delete --analysis-name="ticketing_tixets" --name="app"
+gh osmium view delete --analysis-name="ticketing_tixets" --view-name="app"
 
-gh osmium view render --analysis-name="ticketing_tixets" --name="app"
+gh osmium view terminal render --analysis-name="ticketing_tixets" --view-name="app"
 
-gh osmium view listen --analysis-name="ticketing_tixets" --name="app"
+gh osmium view web-browser render --analysis-name="ticketing_tixets" --view-name="app"
+
+gh osmium view web-browser listen --analysis-name="ticketing_tixets" --view-name="app"
+
+gh osmium view csv render --analysis-name="ticketing_tixets" --view-name="app"
 ```

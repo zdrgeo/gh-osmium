@@ -6,6 +6,8 @@ github.com/cli/safeexec v1.0.1 h1:e/C79PbXF4yYTN/wauC4tviMxEV13BwljGj0N9j+N00=
 github.com/cli/safeexec v1.0.1/go.mod h1:Z/D4tTN8Vs5gXYHDCbaM1S/anmEDnJb1iW0+EJ5zx3Q=
 github.com/cli/shurcooL-graphql v0.0.4 h1:6MogPnQJLjKkaXPyGqPRXOI2qCsQdqNfUY1QSJu2GuY=
 github.com/cli/shurcooL-graphql v0.0.4/go.mod h1:3waN4u02FiZivIV+p1y4d0Jo1jc6BViMA73C+sZo2fk=
+github.com/coder/websocket v1.8.12 h1:5bUXkEPPIbewrnkU8LTCLVaxi4N4J8ahufH2vlo4NAo=
+github.com/coder/websocket v1.8.12/go.mod h1:LNVeNrXQZfe5qhS9ALED3uA+l5pPqvwXg3CKoDBB2gs=
 github.com/cpuguy83/go-md2man/v2 v2.0.4/go.mod h1:tgQtvFlXSQOSOSIRvRPT7W67SCa46tRHOmNcaadrF8o=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -85,6 +87,8 @@ github.com/zdrgeo/osmium v0.0.0-20240813175630-fa7ad1fc5ef4 h1:4e8NrwME28qXcVirV
 github.com/zdrgeo/osmium v0.0.0-20240813175630-fa7ad1fc5ef4/go.mod h1:A3YMqvXxHamNMk6KmQ8cy6yQcBTWHP6QGRuh/FQHCYA=
 github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea h1:DFlD7gTj47rlXOYZbsQ5wzhK2AHONNtSDk3TW2Py3NI=
 github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea/go.mod h1:A3YMqvXxHamNMk6KmQ8cy6yQcBTWHP6QGRuh/FQHCYA=
+github.com/zdrgeo/osmium v0.0.0-20240820184550-fb6c1e7235e7 h1:XaxKe6Mi4/1ahtvjWL1Hg49HGpNTGJTNFbklUtgycWI=
+github.com/zdrgeo/osmium v0.0.0-20240820184550-fb6c1e7235e7/go.mod h1:NEwmI4O7Fci52PyXsTTHLFNHAqhvd1YvKUW3S15zeTI=
 go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
 go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
 golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa h1:ELnwvuAXPNtPk1TJRuGkI9fDTwym6AYBu0qzT8AcHdI=

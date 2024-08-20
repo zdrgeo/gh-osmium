@@ -6,13 +6,14 @@ require (
 	github.com/cli/go-gh/v2 v2.9.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.19.0
-	github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea
+	github.com/zdrgeo/osmium v0.0.0-20240820184550-fb6c1e7235e7
 )
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
 	github.com/cli/safeexec v1.0.1 // indirect
 	github.com/cli/shurcooL-graphql v0.0.4 // indirect
+	github.com/coder/websocket v1.8.12 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/henvic/httpretty v0.1.3 // indirect
