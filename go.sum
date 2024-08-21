@@ -83,12 +83,8 @@ github.com/subosito/gotenv v1.6.0 h1:9NlTDc1FTs4qu0DDq7AEtTPNw6SVm7uBMsUCUjABIf8
 github.com/subosito/gotenv v1.6.0/go.mod h1:Dk4QP5c2W3ibzajGcXpNraDfq2IrhjMIvMSWPKKo0FU=
 github.com/thlib/go-timezone-local v0.0.3 h1:ie5XtZWG5lQ4+1MtC5KZ/FeWlOKzW2nPoUnXYUbV/1s=
 github.com/thlib/go-timezone-local v0.0.3/go.mod h1:/Tnicc6m/lsJE0irFMA0LfIwTBo4QP7A8IfyIv4zZKI=
-github.com/zdrgeo/osmium v0.0.0-20240813175630-fa7ad1fc5ef4 h1:4e8NrwME28qXcVirVTsm0GqMCLAbMXGJhZI9Q+G2ehw=
-github.com/zdrgeo/osmium v0.0.0-20240813175630-fa7ad1fc5ef4/go.mod h1:A3YMqvXxHamNMk6KmQ8cy6yQcBTWHP6QGRuh/FQHCYA=
-github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea h1:DFlD7gTj47rlXOYZbsQ5wzhK2AHONNtSDk3TW2Py3NI=
-github.com/zdrgeo/osmium v0.0.0-20240816200957-ce69133bfcea/go.mod h1:A3YMqvXxHamNMk6KmQ8cy6yQcBTWHP6QGRuh/FQHCYA=
-github.com/zdrgeo/osmium v0.0.0-20240820184550-fb6c1e7235e7 h1:XaxKe6Mi4/1ahtvjWL1Hg49HGpNTGJTNFbklUtgycWI=
-github.com/zdrgeo/osmium v0.0.0-20240820184550-fb6c1e7235e7/go.mod h1:NEwmI4O7Fci52PyXsTTHLFNHAqhvd1YvKUW3S15zeTI=
+github.com/zdrgeo/osmium v0.0.0-20240821191706-7d36ea79cfc6 h1:swr5xMO2oYmCzRWKlnMBhNvwnGrMYjiGetNIc6OPm+g=
+github.com/zdrgeo/osmium v0.0.0-20240821191706-7d36ea79cfc6/go.mod h1:NEwmI4O7Fci52PyXsTTHLFNHAqhvd1YvKUW3S15zeTI=
 go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
 go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
 golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa h1:ELnwvuAXPNtPk1TJRuGkI9fDTwym6AYBu0qzT8AcHdI=
