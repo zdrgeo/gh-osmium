@@ -64,15 +64,22 @@ gh osmium analysis delete
 
 Generate an analysis model using the GitHub repository with owner 'scaleforce' and name 'tixets' as a source. Store the generated analysis model to the user home directory under the name "ticketing_tixets".
 ```
-gh osmium analysis create --analysis-name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
+gh osmium analysis create \
+    --analysis-name="ticketing_tixets" \
+    --source="github:pullrequest" \
+    --source-option="repository-owner=scaleforce,repository-name=tixets"
 ```
 Alter the stored analysis model with name "ticketing_tixets". Use the same GitHub repository with owner "scaleforce" and name "tixets" as a source.
 ```
-gh osmium analysis change --analysis-name="ticketing_tixets" --source="github:pullrequest" --source-option="repository-owner=scaleforce,repository-name=tixets"
+gh osmium analysis change \
+    --analysis-name="ticketing_tixets" \
+    --source="github:pullrequest" \
+    --source-option="repository-owner=scaleforce,repository-name=tixets"
 ```
 Remove the stored analysis model with name "ticketing_tixets" from the user home directory.
 ```
-gh osmium analysis delete --analysis-name="ticketing_tixets"
+gh osmium analysis delete \
+    --analysis-name="ticketing_tixets"
 ```
 
 ### Commands to manipulate the views
@@ -157,29 +164,49 @@ gh osmium view csv render
 
 Geterate a view model based on the analysis with name "ticketing_tixets". Store the generated view model to the user home directory under the name "app". Scope the view model to nodes with names that match any of the the file paths "app/Controller/\*.php", "app/Service/\*.php" or "app/Repository/\*.php".
 ```
-gh osmium view create --analysis-name="ticketing_tixets" --view-name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
+gh osmium view create \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app" \
+    --node-name="app/Controller/*.php" \
+    --node-name="app/Service/*.php" \
+    --node-name="app/Repository/*.php"
 ```
 Alter the stored view model with name "app" based on the analysis with name "ticketing_tixets". Scope the view to the same nodes.
 ```
-gh osmium view change --analysis-name="ticketing_tixets" --view-name="app" --node-name="app/Controller/*.php" --node-name="app/Service/*.php" --node-name="app/Repository/*.php"
+gh osmium view change \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app" \
+    --node-name="app/Controller/*.php" \
+    --node-name="app/Service/*.php" \
+    --node-name="app/Repository/*.php"
 ```
 Remove the stored view model with name "app" based on the analysis with name "ticketing_tixets" from the user home directory.
 ```
-gh osmium view delete --analysis-name="ticketing_tixets" --view-name="app"
+gh osmium view delete \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
 ```
 Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to the terminal.
 ```
-gh osmium view terminal render --analysis-name="ticketing_tixets" --view-name="app"
+gh osmium view terminal render \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
 ```
 Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to HTML file.
 ```
-gh osmium view web-browser render --analysis-name="ticketing_tixets" --view-name="app"
+gh osmium view web-browser render \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
 ```
 Start serving the rendered to HTML file view model with name "app" based on the analysis with name "ticketing_tixets".
 ```
-gh osmium view web-browser listen --analysis-name="ticketing_tixets" --view-name="app"
+gh osmium view web-browser listen \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
 ```
 Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to CSV file.
 ```
-gh osmium view csv render --analysis-name="ticketing_tixets" --view-name="app"
+gh osmium view csv render \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
 ```
