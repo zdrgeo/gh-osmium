@@ -11,9 +11,7 @@ See [Osmium](https://github.com/zdrgeo/osmium).
 ### Workflow
 
 Osmium's workflow is organized into three stages: generate an analysis, generate at least one view of the analysis, explore the views.
-The output of each stage is persisted and can be used mutiple times as input for the next stage.
-This enables iterative style of work - each stage can be repeated with the same input, but with different parameters to produce differenet outputs for the next stage.
-This also helps with time- and resource-intensive stages such as the analysis generation, where multiple API calls (which may also be subject of rate limits) are often required to obtain the necessary historical data from the source.
+The output of each stage is persisted and can be used mutiple times as input for the next stage. This enables iterative style of work - each stage can be repeated with the same input, but with different parameters to produce differenet outputs for the next stage. This also helps with time- and resource-intensive stages such as the analysis generation, where multiple API calls (which may also be subject of rate limits) are often required to obtain the necessary historical data from the source.
 
 ### Configuration
 
@@ -172,7 +170,7 @@ gh osmium view csv render
 
 #### Examples
 
-Geterate a view model based on the analysis with name "ticketing_tixets". Store the generated view model to the user home directory under the name "app". Scope the view model to nodes with names that match any of the the file paths "app/Controller/\*.php", "app/Service/\*.php" or "app/Repository/\*.php".
+Generate a view model based on the analysis with name "ticketing_tixets". Store the generated view model to the user home directory under the name "app". Scope the view model to nodes with names that match any of the the file paths "app/Controller/\*.php", "app/Service/\*.php" or "app/Repository/\*.php".
 ```
 gh osmium view create \
     --analysis-name="ticketing_tixets" \

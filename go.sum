@@ -95,6 +95,8 @@ github.com/zdrgeo/osmium v0.0.0-20240824150739-6dfbf5cb8b0a h1:boBWciMiqyBhY97fV
 github.com/zdrgeo/osmium v0.0.0-20240824150739-6dfbf5cb8b0a/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
 github.com/zdrgeo/osmium v0.0.0-20240825081137-6ecc93d91096 h1:rRHseixoRvn+ugbhuVLjF4I9Bx3DFWXlxUdLqEG6ook=
 github.com/zdrgeo/osmium v0.0.0-20240825081137-6ecc93d91096/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
+github.com/zdrgeo/osmium v0.0.0-20240825125858-582f9322e258 h1:1bjGnUAKDST+ORba7JcxzuuNCCpHCS72qjG9hNSO8H4=
+github.com/zdrgeo/osmium v0.0.0-20240825125858-582f9322e258/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
 go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
 go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
 golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa h1:ELnwvuAXPNtPk1TJRuGkI9fDTwym6AYBu0qzT8AcHdI=
