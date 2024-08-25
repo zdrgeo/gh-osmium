@@ -122,21 +122,31 @@ gh osmium view delete
 gh osmium view terminal render
     --analysis-name -a
     --view-name -v
+    --span-name -s
+    --node-start
+    --edge-node-start
+    --node-count
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
+| --span-name -s | | | Name of the span. |
+| --node-start | | | Start of the nodes. |
+| --edge-node-start | | | Start of the edge nodes. |
+| --node-count | | | Count of the nodes. |
 
 ```
 gh osmium view web-browser render
     --analysis-name -a
     --view-name -v
+    --span-name -s
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
+| --span-name -s | | | Name of the span. |
 
 ```
 gh osmium view web-browser listen
@@ -152,11 +162,13 @@ gh osmium view web-browser listen
 gh osmium view csv render
     --analysis-name -a
     --view-name -v
+    --span-name -s
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
-| --view-name -v | | | Name of the view .|
+| --view-name -v | | | Name of the view. |
+| --span-name -s | | | Name of the span. |
 
 #### Examples
 
@@ -192,6 +204,9 @@ Render the stored view model with name "app" based on the analysis with name "ti
 gh osmium view terminal render \
     --analysis-name="ticketing_tixets" \
     --view-name="app"
+    --node-start=20
+    --edge-node-start=80
+    --node-count=40
 ```
 
 Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to HTML file.
