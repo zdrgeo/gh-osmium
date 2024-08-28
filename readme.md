@@ -87,24 +87,32 @@ gh osmium view create
     --analysis-name -a
     --view-name -v
     [--node-name -n]
+    --builder -b {filepath, pattern}
+    [--builder-option -o]
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
 | --node-name -n | | Yes | Names of the nodes. |
+| --builder -b | filepath | | Builder of the view - filepath or pattern. |
+| --builder-option -o | | Yes | Options of the builder. Reserved for future use. |
 
 ```
 gh osmium view change
     --analysis-name -a
     --view-name -v
     [--node-name -n]
+    --builder -b {filepath, pattern}
+    [--builder-option -o]
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
 | --node-name -n | | Yes | Names of the nodes. |
+| --builder -b | filepath | | Builder of the view - filepath or pattern. |
+| --builder-option -o | | Yes | Options of the builder. Reserved for future use. |
 
 ```
 gh osmium view delete
