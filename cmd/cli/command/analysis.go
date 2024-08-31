@@ -5,20 +5,20 @@ import (
 	"github.com/spf13/viper"
 )
 
-func NewAnalysisCommand(createAnalysisCommand, changeAnalysisCommand, deleteAnalysisCommand *cobra.Command) *cobra.Command {
+func NewAnalysisCommand(deleteAnalysisCommand, gitCommand, gitHubCommand *cobra.Command) *cobra.Command {
 	command := &cobra.Command{
 		Use:   "analysis",
 		Short: "Analysis",
 		Long:  `Analysis.`,
 	}
 
-	command.PersistentFlags().String("analysis-name", "", "Name of the analysis")
+	command.PersistentFlags().StringP("analysis-name", "a", "", "Name of the analysis")
 	command.MarkPersistentFlagRequired("analysis-name")
 	viper.BindPFlag("analysisname", command.PersistentFlags().Lookup("analysis-name"))
 
-	command.AddCommand(createAnalysisCommand)
-	command.AddCommand(changeAnalysisCommand)
 	command.AddCommand(deleteAnalysisCommand)
+	command.AddCommand(gitCommand)
+	command.AddCommand(gitHubCommand)
 
 	return command
 }

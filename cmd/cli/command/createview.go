@@ -48,7 +48,7 @@ func NewCreateViewCommand(handler *view.CreateViewHandler) *cobra.Command {
 		},
 	}
 
-	command.Flags().StringArray("node-name", []string{}, "Names of the nodes")
+	command.Flags().StringArrayP("node-name", "n", []string{}, "Names of the nodes")
 	viper.BindPFlag("nodenames", command.Flags().Lookup("node-name"))
 
 	command.Flags().StringP("builder", "b", "", "Builder of the view")

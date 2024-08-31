@@ -10,8 +10,8 @@ import (
 func NewRenderCSVCommand(handler *view.RenderCSVHandler) *cobra.Command {
 	command := &cobra.Command{
 		Use:   "render",
-		Short: "Render csv",
-		Long:  `Render csv.`,
+		Short: "Render CSV view",
+		Long:  `Render CSV view.`,
 		Run: func(cmd *cobra.Command, args []string) {
 			analysisName, err := cmd.Flags().GetString("analysis-name")
 
@@ -35,7 +35,7 @@ func NewRenderCSVCommand(handler *view.RenderCSVHandler) *cobra.Command {
 		},
 	}
 
-	command.Flags().String("span-name", "", "Name of the span")
+	command.Flags().StringP("span-name", "s", "", "Name of the span")
 
 	return command
 }

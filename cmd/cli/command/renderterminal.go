@@ -10,8 +10,8 @@ import (
 func NewRenderTerminalCommand(handler *view.RenderTerminalHandler) *cobra.Command {
 	command := &cobra.Command{
 		Use:   "render",
-		Short: "Render terminal",
-		Long:  `Render terminal.`,
+		Short: "Render terminal view",
+		Long:  `Render terminal view.`,
 		Run: func(cmd *cobra.Command, args []string) {
 			analysisName, err := cmd.Flags().GetString("analysis-name")
 
@@ -53,7 +53,7 @@ func NewRenderTerminalCommand(handler *view.RenderTerminalHandler) *cobra.Comman
 		},
 	}
 
-	command.Flags().String("span-name", "", "Name of the span")
+	command.Flags().StringP("span-name", "s", "", "Name of the span")
 	command.Flags().Int("x-node-start", 0, "Start of the X nodes")
 	command.Flags().Int("y-node-start", 0, "Start of the Y nodes")
 	command.Flags().Int("node-count", 100, "Count of the nodes")

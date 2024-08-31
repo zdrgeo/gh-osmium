@@ -8,6 +8,7 @@ import (
 	"github.com/zdrgeo-scaleforce/gh-osmium/cmd/cli/command"
 	"github.com/zdrgeo/osmium/pkg/analysis"
 	"github.com/zdrgeo/osmium/pkg/repository"
+	"github.com/zdrgeo/osmium/pkg/source/git"
 	"github.com/zdrgeo/osmium/pkg/source/github"
 	"github.com/zdrgeo/osmium/pkg/view"
 )
@@ -30,14 +31,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	analysisSource := github.NewPullRequestAnalysisSource(client)
+	gitAnalysisSource := git.NewCommitAnalysisSource()
+	gitHubAnalysisSource := github.NewPullRequestAnalysisSource(client)
 
 	analysisRepository := repository.NewFileAnalysisRepository(viper.GetString("BASEPATH")) // Empty means user home
 	viewRepository := repository.NewFileViewRepository(viper.GetString("BASEPATH"))         // Empty means user home
 
-	createAnalysisHandler := analysis.NewCreateAnalysisHandler(analysisSource, analysisRepository)
-	changeAnalysisHandler := analysis.NewChangeAnalysisHandler(analysisSource, analysisRepository)
 	deleteAnalysisHandler := analysis.NewDeleteAnalysisHandler(analysisRepository)
+	createGitHandler := analysis.NewCreateGitHandler(gitAnalysisSource, analysisRepository)
+	changeGitHandler := analysis.NewChangeGitHandler(gitAnalysisSource, analysisRepository)
+	createGitHubHandler := analysis.NewCreateGitHubHandler(gitHubAnalysisSource, analysisRepository)
+	changeGitHubHandler := analysis.NewChangeGitHubHandler(gitHubAnalysisSource, analysisRepository)
 
 	createViewHandler := view.NewCreateViewHandler(analysisRepository, viewRepository)
 	changeViewHandler := view.NewChangeViewHandler(analysisRepository, viewRepository)
@@ -46,12 +50,21 @@ func main() {
 	renderWebBrowserHandler := view.NewRenderWebBrowserHandler(viewRepository)
 	listenWebBrowserHandler := view.NewListenWebBrowserHandler()
 	renderCSVHandler := view.NewRenderCSVHandler(viewRepository)
+	renderPNGHandler := view.NewRenderPNGHandler(viewRepository)
 
-	createAnalysisCommand := command.NewCreateAnalysisCommand(createAnalysisHandler)
-	changeAnalysisCommand := command.NewChangeAnalysisCommand(changeAnalysisHandler)
 	deleteAnalysisCommand := command.NewDeleteAnalysisCommand(deleteAnalysisHandler)
 
-	analysisCommand := command.NewAnalysisCommand(createAnalysisCommand, changeAnalysisCommand, deleteAnalysisCommand)
+	createGitCommand := command.NewCreateGitCommand(createGitHandler)
+	changeGitCommand := command.NewChangeGitCommand(changeGitHandler)
+
+	gitCommand := command.NewGitCommand(createGitCommand, changeGitCommand)
+
+	createGitHubCommand := command.NewCreateGitHubCommand(createGitHubHandler)
+	changeGitHubCommand := command.NewChangeGitHubCommand(changeGitHubHandler)
+
+	gitHubCommand := command.NewGitHubCommand(createGitHubCommand, changeGitHubCommand)
+
+	analysisCommand := command.NewAnalysisCommand(deleteAnalysisCommand, gitCommand, gitHubCommand)
 
 	createViewCommand := command.NewCreateViewCommand(createViewHandler)
 	changeViewCommand := command.NewChangeViewCommand(changeViewHandler)
@@ -70,7 +83,11 @@ func main() {
 
 	csvCommand := command.NewCSVCommand(renderCSVCommand)
 
-	viewCommand := command.NewViewCommand(createViewCommand, changeViewCommand, deleteViewCommand, terminalCommand, webBrowserCommand, csvCommand)
+	renderPNGCommand := command.NewRenderPNGCommand(renderPNGHandler)
+
+	pngCommand := command.NewPNGCommand(renderPNGCommand)
+
+	viewCommand := command.NewViewCommand(createViewCommand, changeViewCommand, deleteViewCommand, terminalCommand, webBrowserCommand, csvCommand, pngCommand)
 
 	osmiumCommand := command.NewOsmiumCommand(analysisCommand, viewCommand)
 

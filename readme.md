@@ -25,28 +25,68 @@ SOURCE=github:pullrequest
 ### Commands to manipulate the DSM analyses
 
 ```
-gh osmium analysis create
+gh osmium analysis github create
     --analysis-name -a
-    --source -s {github:pullrequest, git:commit}
-    [--source-option -o]
+    --repository-owner
+    --repository-name
+    --change -c {pullrequest}
+    [--change-option -o]
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
-| --source -s | github:pullrequest | | Source of the analysis - github:pullrequest or git:commit. |
-| --source-option -o | | Yes | Options of the source. If the source is github:pullrequest - repository-owner and repository-name. If the source is git:commit - repository-url and repository-path. |
+| --repository-owner | | | Owner of the GitHub repository. |
+| --repository-name | | | Name of the GitHub repository. |
+| --change | -c | | Change of the analysis - pullrequest. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
-gh osmium analysis change
+gh osmium analysis git create
     --analysis-name -a
-    --source -s {github:pullrequest, git:commit}
-    [--source-option -o]
+    --repository-url
+    --repository-path
+    --change -c {commit}
+    [--change-option -o]
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
-| --source -s | github:pullrequest | | Source of the analysis - github:pullrequest or git:commit. |
-| --source-option -o | | Yes | Options of the source. If the source is github:pullrequest - repository-owner and repository-name. If the source is git:commit - repository-url and repository-path. |
+| --repository-url | | | URL of the Git repository. |
+| --repository-path | | | Path of the Git repository. |
+| --change | -c | | Change of the analysis - commit. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+
+```
+gh osmium analysis github change
+    --analysis-name -a
+    --repository-owner
+    --repository-name
+    --change -c {pullrequest}
+    [--change-option -o]
+```
+| Parameter | Default | Optional | Description |
+|--|--|--|--|
+| --analysis-name -a | | | Name of the analysis. |
+| --repository-owner | | | Owner of the GitHub repository. |
+| --repository-name | | | Name of the GitHub repository. |
+| --change | -c | | Change of the analysis - pullrequest. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+
+```
+gh osmium analysis git change
+    --analysis-name -a
+    --repository-url
+    --repository-path
+    --change -c {commit}
+    [--change-option -o]
+```
+| Parameter | Default | Optional | Description |
+|--|--|--|--|
+| --analysis-name -a | | | Name of the analysis. |
+| --repository-url | | | URL of the Git repository. |
+| --repository-path | | | Path of the Git repository. |
+| --change | -c | | Change of the analysis - commit. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
 gh osmium analysis delete
@@ -60,18 +100,18 @@ gh osmium analysis delete
 
 Generate an analysis model using the GitHub repository with owner 'scaleforce' and name 'tixets' as a source. Store the generated analysis model to the user home directory under the name "ticketing_tixets".
 ```
-gh osmium analysis create \
+gh osmium analysis github create \
     --analysis-name="ticketing_tixets" \
-    --source="github:pullrequest" \
-    --source-option="repository-owner=scaleforce,repository-name=tixets"
+    --repository-owner="scaleforce" \
+    --repository-name="tixets"
 ```
 
 Alter the stored analysis model with name "ticketing_tixets". Use the same GitHub repository with owner "scaleforce" and name "tixets" as a source.
 ```
-gh osmium analysis change \
+gh osmium analysis github change \
     --analysis-name="ticketing_tixets" \
-    --source="github:pullrequest" \
-    --source-option="repository-owner=scaleforce,repository-name=tixets"
+    --repository-owner="scaleforce" \
+    --repository-name="tixets"
 ```
 
 Remove the stored analysis model with name "ticketing_tixets" from the user home directory.
@@ -176,6 +216,18 @@ gh osmium view csv render
 | --view-name -v | | | Name of the view. |
 | --span-name -s | | | Name of the span. |
 
+```
+gh osmium view png render
+    --analysis-name -a
+    --view-name -v
+    --span-name -s
+```
+| Parameter | Default | Optional | Description |
+|--|--|--|--|
+| --analysis-name -a | | | Name of the analysis. |
+| --view-name -v | | | Name of the view. |
+| --span-name -s | | | Name of the span. |
+
 #### Examples
 
 Generate a view model based on the analysis with name "ticketing_tixets". Store the generated view model to the user home directory under the name "app". Scope the view model to nodes with names that match any of the the file paths "app/Controller/\*.php", "app/Service/\*.php" or "app/Repository/\*.php".
@@ -232,6 +284,13 @@ gh osmium view web-browser listen \
 Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to CSV file.
 ```
 gh osmium view csv render \
+    --analysis-name="ticketing_tixets" \
+    --view-name="app"
+```
+
+Render the stored view model with name "app" based on the analysis with name "ticketing_tixets" to PNG file.
+```
+gh osmium view png render \
     --analysis-name="ticketing_tixets" \
     --view-name="app"
 ```
