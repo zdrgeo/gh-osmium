@@ -37,7 +37,7 @@ gh osmium analysis github create
 | --analysis-name -a | | | Name of the analysis. |
 | --repository-owner | | | Owner of the GitHub repository. |
 | --repository-name | | | Name of the GitHub repository. |
-| --change | -c | | Change of the analysis - pullrequest. |
+| --change -c | | | Change of the analysis - pullrequest. |
 | --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
@@ -53,7 +53,7 @@ gh osmium analysis git create
 | --analysis-name -a | | | Name of the analysis. |
 | --repository-url | | | URL of the Git repository. |
 | --repository-path | | | Path of the Git repository. |
-| --change | -c | | Change of the analysis - commit. |
+| --change -c | | | Change of the analysis - commit. |
 | --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
@@ -69,7 +69,7 @@ gh osmium analysis github change
 | --analysis-name -a | | | Name of the analysis. |
 | --repository-owner | | | Owner of the GitHub repository. |
 | --repository-name | | | Name of the GitHub repository. |
-| --change | -c | | Change of the analysis - pullrequest. |
+| --change -c | | | Change of the analysis - pullrequest. |
 | --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
@@ -85,7 +85,7 @@ gh osmium analysis git change
 | --analysis-name -a | | | Name of the analysis. |
 | --repository-url | | | URL of the Git repository. |
 | --repository-path | | | Path of the Git repository. |
-| --change | -c | | Change of the analysis - commit. |
+| --change -c | | | Change of the analysis - commit. |
 | --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
