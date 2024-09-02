@@ -144,6 +144,8 @@ github.com/zdrgeo/osmium v0.0.0-20240828184248-391fc55351b5 h1:/5HVYuHMHtnej2M5H
 github.com/zdrgeo/osmium v0.0.0-20240828184248-391fc55351b5/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
 github.com/zdrgeo/osmium v0.0.0-20240831172452-64125aa92918 h1:NfAcBkgPeYCnDFIPe2Ki4xM1qncqjFfJ9gAXLM5TC3s=
 github.com/zdrgeo/osmium v0.0.0-20240831172452-64125aa92918/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
+github.com/zdrgeo/osmium v0.0.0-20240901203120-56d21eb20a1e h1:OF/qwBjy4g1iMV/LhJhp0r0BfDIQEmsYYrUIIfLiJfM=
+github.com/zdrgeo/osmium v0.0.0-20240901203120-56d21eb20a1e/go.mod h1:X6Yp+O4OarTnJUVNlvH6FMM4vaVpokfM1IZF0Zzb0tQ=
 go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
 go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
