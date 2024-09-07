@@ -15,7 +15,7 @@ The output of each stage is persisted and can be used mutiple times as input for
 
 ### Configuration
 
-```
+```dotenv
 # config.env
 
 BASEPATH=
