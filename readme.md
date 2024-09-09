@@ -27,66 +27,74 @@ SOURCE=github:pullrequest
 ```
 gh osmium analysis github create
     --analysis-name -a
-    --repository-owner
-    --repository-name
     --change -c {pullrequest}
     [--change-option -o]
+    --span-size -s
+    --repository-owner
+    --repository-name
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
+| --change -c | pullrequest | | Change of the analysis - pull request. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+| --span-size -s | | Yes | Size of the span. |
 | --repository-owner | | | Owner of the GitHub repository. |
 | --repository-name | | | Name of the GitHub repository. |
-| --change -c | | | Change of the analysis - pullrequest. |
-| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
 gh osmium analysis git create
     --analysis-name -a
-    --repository-url
-    --repository-path
     --change -c {commit}
     [--change-option -o]
+    --span-size -s
+    --repository-url
+    --repository-path
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
+| --change -c | commit | | Change of the analysis - commit. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+| --span-size -s | | Yes | Size of the span. |
 | --repository-url | | | URL of the Git repository. |
 | --repository-path | | | Path of the Git repository. |
-| --change -c | | | Change of the analysis - commit. |
-| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
 gh osmium analysis github change
     --analysis-name -a
-    --repository-owner
-    --repository-name
     --change -c {pullrequest}
     [--change-option -o]
+    --span-size -s
+    --repository-owner
+    --repository-name
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
+| --change -c | pullrequest | | Change of the analysis - pull request. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+| --span-size -s | | Yes | Size of the span. |
 | --repository-owner | | | Owner of the GitHub repository. |
 | --repository-name | | | Name of the GitHub repository. |
-| --change -c | | | Change of the analysis - pullrequest. |
-| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
 gh osmium analysis git change
     --analysis-name -a
-    --repository-url
-    --repository-path
     --change -c {commit}
     [--change-option -o]
+    --span-name -s
+    --repository-url
+    --repository-path
 ```
 | Parameter | Default | Optional | Description |
 |--|--|--|--|
 | --analysis-name -a | | | Name of the analysis. |
+| --change -c | commit | | Change of the analysis - commit. |
+| --change-option -o | | Yes | Options of the change. Reserved for future use. |
+| --span-size -s | | Yes | Size of the span. |
 | --repository-url | | | URL of the Git repository. |
 | --repository-path | | | Path of the Git repository. |
-| --change -c | | | Change of the analysis - commit. |
-| --change-option -o | | Yes | Options of the change. Reserved for future use. |
 
 ```
 gh osmium analysis delete
@@ -135,7 +143,7 @@ gh osmium view create
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
 | --node-name -n | | Yes | Names of the nodes. |
-| --builder -b | filepath | | Builder of the view - filepath or pattern. |
+| --builder -b | filepath | | Builder of the view - file path or RegExp pattern. |
 | --builder-option -o | | Yes | Options of the builder. Reserved for future use. |
 
 ```
@@ -151,7 +159,7 @@ gh osmium view change
 | --analysis-name -a | | | Name of the analysis. |
 | --view-name -v | | | Name of the view. |
 | --node-name -n | | Yes | Names of the nodes. |
-| --builder -b | filepath | | Builder of the view - filepath or pattern. |
+| --builder -b | filepath | | Builder of the view - file path or RegExp pattern. |
 | --builder-option -o | | Yes | Options of the builder. Reserved for future use. |
 
 ```
