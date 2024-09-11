@@ -2,6 +2,7 @@ package command
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/spf13/cobra"
 	"github.com/zdrgeo/osmium/pkg/view"
@@ -35,7 +36,7 @@ func NewRenderPNGCommand(handler *view.RenderPNGHandler) *cobra.Command {
 		},
 	}
 
-	command.Flags().StringP("span-name", "s", "", "Name of the span")
+	command.Flags().StringP("span-name", "s", strconv.Itoa(0), "Name of the span")
 
 	return command
 }
